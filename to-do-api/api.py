@@ -62,13 +62,13 @@ class Todo(Resource):
 
         Example:
             # In the terminal
-            $ curl http://localhost:5000/todos/todo1 -d "data=Remember the milk" -X PUT -v
+            $ curl http://localhost:5000/todos/todo1 -d "task=Remember the milk" -X PUT -v
 
             OR
 
             # Python
             requests.put('http://localhost:5000/todos/todo1',
-                         data={'data': 'Remember the milk'}).json()
+                         data={'task': 'Remember the milk'}).json()
         """
 
         # parser
@@ -102,13 +102,13 @@ class TodoList(Resource):
 
         Example:
             # In the terminal
-            $ curl http://localhost:5000/todos -d "data=Remember the milk" -X POST -v
+            $ curl http://localhost:5000/todos -d "task=Remember the milk" -X POST -v
 
             OR
 
             # Python
             requests.post('http://localhost:5000/todos',
-                         data={'data': 'Remember the milk'}).json()
+                         data={'task': 'Remember the milk'}).json()
         """
         args = parser.parse_args()
         todo_id = int(max(TODOS.keys()).lstrip('todo')) + 1
