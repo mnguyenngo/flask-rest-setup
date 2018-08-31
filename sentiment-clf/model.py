@@ -13,8 +13,7 @@ from util import plot_roc
 class NLPModel(object):
 
     def __init__(self):
-        """Simple NLP classifier model
-
+        """Simple NLP
         Attributes:
             clf: sklearn classifier model
             vectorizor: TFIDF vectorizer or similar
@@ -66,7 +65,7 @@ class NLPModel(object):
             pickle.dump(self.clf, f)
             print("Pickled classifier at {}".format(path))
 
-    def plot_roc(self, X, y):
+    def plot_roc(self, X, y, size_x, size_y):
         """Plot the ROC curve for X_test and y_test.
         """
-        plot_roc(self.clf, X, y)
+        plot_roc(self.clf, X, y, size_x, size_y)

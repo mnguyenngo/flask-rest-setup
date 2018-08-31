@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 #     return tokens
 
 
-def plot_roc(model, x_columns, y_true):
+def plot_roc(model, x_columns, y_true, size_x=12, size_y=12):
     """Returns a ROC plot
 
     Forked from Matt Drury.
@@ -26,7 +26,7 @@ def plot_roc(model, x_columns, y_true):
     area_under_curve = auc(fpr, tpr)
 
     # method I: plt
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(size_x, size_y))
     model_name = str(type(model)).split('.')[-1].strip(">\'")
     plt.title(f'{model_name} ROC')
     ax.plot(fpr, tpr, 'k', label='AUC = %0.3f' % area_under_curve)
